@@ -1,0 +1,163 @@
+  #app {
+    margin: 0 auto;
+    max-width: 1300px;
+    text-align: center;
+  }
+
+  #app h2 {
+    font-size: 25pt;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  #app h2:before,
+  #app h2:after {
+    /* h2 decoration */
+    background: #515151;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin: 0 25px;
+    vertical-align: middle;
+    width: 50px;
+  }
+
+  #app #intro {
+    font-size: 16pt;
+    text-align: center;
+  }
+
+  #app .left,
+  .right {
+    /* div left & right phone */
+    display: inline-block;
+    margin-top: 60px;
+    text-align: left;
+    vertical-align: top;
+    width: 25%;
+  }
+
+  #app .left div,
+  .right div {
+    padding: 8px;
+  }
+
+  #app .left p,
+  .right p {
+    margin-top: 5px;
+  }
+
+  #app .left h3,
+  .right h3 {
+    font-size: 15pt;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  #app .left h3:before,
+  .right h3:before {
+    /* all img before left & right */
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #app .left #desc-1,
+  #app .left #desc-2,
+  #app .left #desc-3,
+  #app .right #desc-4,
+  #app .right #desc-5,
+  #app .right #desc-6 {
+    padding-left: 65px;
+    position: relative;
+  }
+
+  #app .left #desc-1:before,
+  #app .left #desc-2:before,
+  #app .left #desc-3:before {
+    display: block;
+    left: -10px;
+    position: absolute;
+  }
+
+  #app .right #desc-4:before,
+  #app .right #desc-5:before,
+  #app .right #desc-6:before {
+    display: block;
+    left: -5px;
+    position: absolute;
+  }
+
+  #app .left #desc-1:before {
+    content: url("../img/lagrit/desc-1.png");
+  }
+
+  #app .left #desc-1:hover:before {
+    content: url("../img/lagrit/desc-1-hover.png");
+  }
+
+  #app .left #desc-2:before {
+    content: url("../img/lagrit/desc-2.png");
+  }
+
+  #app .left #desc-2:hover:before {
+    content: url("../img/lagrit/desc-2-hover.png");
+  }
+
+  #app .left #desc-3:before {
+    content: url("../img/lagrit/desc-3.png");
+  }
+
+  #app .left #desc-3:hover:before {
+    content: url("../img/lagrit/desc-3-hover.png");
+  }
+
+  #app .right #desc-4:before {
+    /* desc-4 hover */
+    content: url("../img/lagrit/desc-4.png");
+  }
+
+  #app .right #desc-4:hover:before {
+    /* desc-4 hover */
+    content: url("../img/lagrit/desc-4-hover.png");
+  }
+
+  #app .right #desc-5:before {
+    /* desc-5 */
+    content: url("../img/lagrit/desc-5.png");
+  }
+
+  #app .right #desc-5:hover:before {
+    /* desc-5 hover*/
+    content: url("../img/lagrit/desc-5-hover.png");
+  }
+
+  #app .right #desc-6:before {
+    /* commentaire */
+    content: url("../img/lagrit/desc-6.png");
+  }
+
+  #app .right #desc-6:hover:before {
+    /* desc-6 hover */
+    content: url("../img/lagrit/desc-6-hover.png");
+  }
+
+  #app .phone {
+    background: url("../img/lagrit/phone.png") no-repeat;
+    display: inline-block;
+    height: 590px;
+    width: 350px;
+  }
+
+  #app .phone img {
+    overflow: hidden;
+  }
+
+  #app .phone .slick {
+    max-width: 250px;
+    left: 50px;
+    top: 60px;
+  }
+
+  #app .phone button {
+    display: none!important;
+  }

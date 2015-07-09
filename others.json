@@ -1,0 +1,30 @@
+[
+    {
+      "id": "moviebook",
+      "name": "Moviebook",
+      "description": "MovieBook want to be a pseudo social network where you can share, track and discover movies through your facebook friends.",
+      "language":"PHP",
+      "platform": ["globe"]
+    },
+    {
+      "id": "aforismi",
+      "name": "Aforismi e Frasi",
+      "description": "Aforismi e Frasi for Windows 8 is an app where you can find about 27.000 quotes from various famous people.",
+      "language":"C#",
+      "platform": ["windows"]
+    },
+    {
+      "id": "teddl",
+      "name": "Ted Viewer-Downloader",
+      "description": "Watch and/or download, for offline watching, all Ted Talks with the possibility to choose subtitle and video quality.",
+      "language":"C#",
+      "platform": ["windows"]
+    },
+    {
+      "id": "lagrit",
+      "name": "Lagrit",
+      "description": "Lagrit raccoglie le versioni dei più importanti autori Greci e latini. Naviga comodamente fra gli autori o per i libri di testo presenti all'interno dell' app.",
+      "language":"C#",
+      "platform": ["mobile", "windows"]
+    }
+]
