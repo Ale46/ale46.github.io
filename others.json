@@ -21,6 +21,13 @@
       "platform": ["windows"]
     },
     {
+      "id": "mvd",
+      "name": "Multi Video Downloader",
+      "description": "With Multi Video Downloader you can download and watch, offline, videos from the most important sites like Youtube, Vimeo, Facebook and many more!",
+      "language":"C#",
+      "platform": ["desktop", "mobile", "windows"]
+    },
+    {
       "id": "lagrit",
       "name": "Lagrit",
       "description": "Lagrit raccoglie le versioni dei più importanti autori Greci e latini. Naviga comodamente fra gli autori o per i libri di testo presenti all'interno dell' app.",
