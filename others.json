@@ -7,21 +7,21 @@
       "platform": ["globe"]
     },
     {
-      "id": "aforismi",
+      "id": "aforismi-e-frasi",
       "name": "Aforismi e Frasi",
       "description": "Aforismi e Frasi for Windows 8 is an app where you can find about 27.000 quotes from various famous people.",
       "language":"C#",
-      "platform": ["windows"]
+      "platform": ["desktop","windows"]
     },
     {
-      "id": "teddl",
+      "id": "ted-downloader",
       "name": "Ted Viewer-Downloader",
       "description": "Watch and/or download, for offline watching, all Ted Talks with the possibility to choose subtitle and video quality.",
       "language":"C#",
-      "platform": ["windows"]
+      "platform": ["desktop","windows"]
     },
     {
-      "id": "mvd",
+      "id": "multi-video-downloader",
       "name": "Multi Video Downloader",
       "description": "With Multi Video Downloader you can download and watch, offline, videos from the most important sites like Youtube, Vimeo, Facebook and many more!",
       "language":"C#",

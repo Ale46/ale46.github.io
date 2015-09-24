@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
       $('#img-avatar').html('<a href="#"><img src="' + avatar + '" class="center-block img-circle img-thumbnail img-responsive" alt="avatar"/></a>');
     }
     //$('#other-data').html('Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'');
-    var social = '<ul class="socialf"><li> <a href="https://twitter.com/Ale467"> <i class="fa fa-twitter"> &nbsp; </i> </a> </li><li> <a href="https://github.com/Ale46"> <i class="fa fa-github"> &nbsp; </i> </a> </li></ul><br />';
+    var social = '<ul class="socialf"><li> <a href="https://twitter.com/Ale467"> <i class="fa fa-twitter"> &nbsp; </i> </a> </li><li> <a href="https://github.com/Ale46"> <i class="fa fa-github"> &nbsp; </i> </a> </li><li> <a href="https://gratipay.com/~Ale46/"> <i class="fa fa-gittip"> &nbsp; </i> </a> </li></ul><br />';
     $('#name').html(fullname + social);
     $('#followers').html(followersnum);
     $('#following').html(followingnum);
@@ -37,56 +37,59 @@ jQuery(document).ready(function($) {
     });
 
     function outputPageContent(home) {
-      //console.log(home);
-
 
       if (repositories.length == 0) {
         outhtml = outhtml + '<p>No repos!</p></div>';
+      }else{
+        $.each(repositories, function(index) {
+
+          if (!repositories[index].description || repositories[index].fork)
+            return;
+          var lastupdate = new Date(repositories[index].updated_at);
+          var html_url = "";
+          langs[index] = repositories[index].language;
+          //console.log(langs[index]);
+          if (repositories[index].homepage === "" || repositories[index].homepage == undefined)
+            html_url = repositories[index].html_url;
+          else
+            html_url = repositories[index].homepage;
+
+          if (home){
+            outhtml += '<li class="list-group-item col-xs-12 col-md-12 col-lg-6 col-sm-12">';
+            outhtml += '<time datetime="' + lastupdate.getDate() + '/' + (lastupdate.getMonth() + 1) + '/' + lastupdate.getFullYear() + '">';
+            outhtml += '<span class="lang"><i class="devicon-' + repositories[index].language.toLowerCase() + '-plain"></i></span>';
+            outhtml += '<span class="textlang">' + repositories[index].language + '</span>';
+            outhtml += '</time>';
+            outhtml += '<div class="info">';
+            outhtml += '<h2 class="title">' + repositories[index].name + '</h2>';
+            outhtml += '<p class="desc">' + repositories[index].description + '</p>';
+            outhtml += '<div class="pfoot">\
+                                      <i class="fa fa-star"></i> ' + repositories[index].stargazers_count + '\
+                                      <i class="fa fa-code-fork"></i> ' + repositories[index].forks_count + '\
+                                  </div>';
+            outhtml += '</div>';
+            outhtml += '<div class="social">'
+            outhtml += '<ul>';
+            if (repositories[index].homepage)
+              outhtml += '<li class=facebook style="width:33%;"><a href="' + repositories[index].homepage + '"><span class="fa fa-home"></span></a></li>';
+            outhtml += '<li class=facebook style="width:33%;"><a href="' + repositories[index].html_url + '"><span class="fa fa-github"></span></a></li>';
+            outhtml += '</ul></div></li>';
+          }
+
+        });
+        others_html = "";
+        if (home)
+          $('.project-list').html(outhtml);
       }
 
-      $.each(repositories, function(index) {
 
-        if (!repositories[index].description || repositories[index].fork)
-          return;
-        var lastupdate = new Date(repositories[index].updated_at);
-        var html_url = "";
-        langs[index] = repositories[index].language;
-        //console.log(langs[index]);
-        if (repositories[index].homepage === "" || repositories[index].homepage == undefined)
-          html_url = repositories[index].html_url;
-        else
-          html_url = repositories[index].homepage;
-        if (home) {
-          outhtml += '<li class="list-group-item col-xs-12 col-md-12 col-lg-6 col-sm-12">';
-          outhtml += '<time datetime="' + lastupdate.getDate() + '/' + (lastupdate.getMonth() + 1) + '/' + lastupdate.getFullYear() + '">';
-          outhtml += '<span class="lang"><i class="devicon-' + repositories[index].language.toLowerCase() + '-plain"></i></span>';
-          outhtml += '<span class="textlang">' + repositories[index].language + '</span>';
-          outhtml += '</time>';
-          outhtml += '<div class="info">';
-          outhtml += '<h2 class="title">' + repositories[index].name + '</h2>';
-          outhtml += '<p class="desc">' + repositories[index].description + '</p>';
-          outhtml += '<div class="pfoot">\
-                                    <i class="fa fa-star"></i> ' + repositories[index].stargazers_count + '\
-                                    <i class="fa fa-code-fork"></i> ' + repositories[index].forks_count + '\
-                                </div>';
-          outhtml += '</div>';
-          outhtml += '<div class="social">'
-          outhtml += '<ul>';
-          if (repositories[index].homepage)
-            outhtml += '<li class=facebook style="width:33%;"><a href="' + repositories[index].homepage + '"><span class="fa fa-home"></span></a></li>';
-          outhtml += '<li class=facebook style="width:33%;"><a href="' + repositories[index].html_url + '"><span class="fa fa-github"></span></a></li>';
-          outhtml += '</ul></div></li>';
-        }
-      });
-      others_html = "";
-      if (home) $('.project-list').html(outhtml);
       //TODO Leggere da json
       var others = [];
       $.ajaxSetup({
         async: false
       });
 
-      $.getJSON("others.json", function(data) {
+      $.getJSON("../../others.json", function(data) {
 
         $.each(data, function(index, value) {
           platform = "";
@@ -101,8 +104,8 @@ jQuery(document).ready(function($) {
             $.each(this.platform, function(index, value) {
               others_html += "<i class=\"fa fa-" + value + "\"></i> ";
             });
-            others_html += "<p>" + this.description + "</p>\
-                    <a href=\"" + this.id + ".html\" class=\"btn btn-primary\" title=\"See more\">See work »</a>\
+            others_html += "<p style=\"text-align: justify\">" + this.description + "</p>\
+                    <a href=\"projects/" + this.id + "\" class=\"btn btn-primary\" title=\"See more\">See work »</a>\
                   </div>\
                 </div>\
                 ";
