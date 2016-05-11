@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
             others_html += "\
             <div class=\"col-md-4\" style=\"padding-bottom:25px\";>\
               <div>\
-                <img src=\"img/thumbs/" + this.id + "_thumb.png\" class=\"img-thumbnail\">\
+                <img src=\"img/thumbs/" + this.id + "_thumb.png\">\
                 <h2>" + this.name + "</h2>";
             $.each(this.platform, function(index, value) {
               others_html += "<i class=\"fa fa-" + value + "\"></i> ";
