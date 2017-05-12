@@ -39,6 +39,13 @@
       "name": "Il giochino dello shottino",
       "description": "In questo drinking game per smartphone tutto è basato su eventi generati di volta in volta da \"carte\" (ne abbiamo più di 200!).",
       "language":"JavaScript",
-      "platform": ["mobile", "android", "apple"]
+      "platform": ["mobile", "android", ]
+    },
+		    {
+      "id": "compafood",
+      "name": "CompaFood",
+      "description": "It's better to eat this or that? Get an answer with CompaFood!",
+      "language":"JavaScript",
+      "platform": ["mobile", "android"]
     }
 ]
